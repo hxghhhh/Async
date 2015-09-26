@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -72,9 +72,6 @@
                                 <rect key="frame" x="230" y="170" width="141" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Looking for a group?"/>
-                                <connections>
-                                    <segue destination="8ps-L8-Taq" kind="show" id="eRI-lj-y8w"/>
-                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -89,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9p-Ke-lib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="474"/>
+            <point key="canvasLocation" x="2133" y="-132"/>
         </scene>
         <!--As Swipe View Controller-->
         <scene sceneID="ofB-ld-Lgj">
@@ -201,7 +198,6 @@
                                         <connections>
                                             <outlet property="hackImage" destination="S7T-t5-U39" id="oGk-7v-Sl4"/>
                                             <outlet property="hackName" destination="nKW-aE-5os" id="5rY-EJ-re1"/>
-                                            <segue destination="Wg3-Q1-tlp" kind="show" id="qTX-rE-xZE"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -222,10 +218,13 @@
                             <constraint firstItem="yfZ-IS-mba" firstAttribute="centerX" secondItem="RmY-nA-DbQ" secondAttribute="centerX" id="t9M-rT-PqN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="iHV-V2-5tE" kind="show" identifier="gotoSwipeView" id="eFM-jL-gkY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBl-LL-ua4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205" y="474"/>
+            <point key="canvasLocation" x="1987" y="856"/>
         </scene>
     </scenes>
     <resources>

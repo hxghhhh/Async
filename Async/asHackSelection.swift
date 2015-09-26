@@ -43,7 +43,8 @@ class asEventSelection: UIViewController, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath)
+        //print(indexPath)
+        performSegueWithIdentifier("gotoSwipeView", sender: nil)
     }
 
 }
