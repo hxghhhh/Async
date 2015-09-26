@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import QuartzCore
 
 class asEventSelection: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    var testData:[String]  = ["Reggie", "Carden", "Hugh"]
+    var hacks:[String]  = ["hackGT", "hackCUU", "hackNY", "hackTX", "VandyHacks", "CalHacks"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +29,15 @@ class asEventSelection: UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return testData.count
+        return hacks.count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
        
-        
         let cell:asHackCell = collectionView.dequeueReusableCellWithReuseIdentifier("hackCell", forIndexPath: indexPath) as! asHackCell
        
-        cell.hackName.text = testData[indexPath.row]
+        cell.hackName.text = hacks[indexPath.row]
+        cell.hackImage.image = UIImage(named: hacks[indexPath.row])
         
         return cell
     }
@@ -44,7 +45,6 @@ class asEventSelection: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
     }
-
 
 }
 
