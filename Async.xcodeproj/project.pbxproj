@@ -24,6 +24,7 @@
 		A828B49D1BB671FB00A80BEF /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4991BB671FB00A80BEF /* DraggableViewBackground.swift */; settings = {ASSET_TAGS = (); }; };
 		A828B49E1BB671FB00A80BEF /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B49A1BB671FB00A80BEF /* OverlayView.swift */; settings = {ASSET_TAGS = (); }; };
 		A828B49F1BB671FB00A80BEF /* asSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B49B1BB671FB00A80BEF /* asSwipeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A89288781BB7551C004B7D87 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89288771BB7551C004B7D87 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		A828B4991BB671FB00A80BEF /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
 		A828B49A1BB671FB00A80BEF /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		A828B49B1BB671FB00A80BEF /* asSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asSwipeViewController.swift; sourceTree = "<group>"; };
+		A89288771BB7551C004B7D87 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		AD0014685AC1160BDF00B7A7 /* libPods-Async.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Async.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				AD0014685AC1160BDF00B7A7 /* libPods-Async.a */,
+				A89288771BB7551C004B7D87 /* SwiftyJSON.swift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				A828B49F1BB671FB00A80BEF /* asSwipeViewController.swift in Sources */,
 				A828B49E1BB671FB00A80BEF /* OverlayView.swift in Sources */,
 				A828B49C1BB671FB00A80BEF /* DraggableView.swift in Sources */,
+				A89288781BB7551C004B7D87 /* SwiftyJSON.swift in Sources */,
 				8FC4720E1BB6512300B85D3B /* asIdeaDescription.swift in Sources */,
 				8F0E7E2D1BB7281B00780E05 /* asNetworking.swift in Sources */,
 				A828B4941BB6335500A80BEF /* asLogin.swift in Sources */,
