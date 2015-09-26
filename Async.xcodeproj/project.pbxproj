@@ -11,6 +11,8 @@
 		8F0E7E2D1BB7281B00780E05 /* asNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E7E2C1BB7281B00780E05 /* asNetworking.swift */; settings = {ASSET_TAGS = (); }; };
 		8FC4720C1BB6478F00B85D3B /* asModeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4720B1BB6478F00B85D3B /* asModeSelection.swift */; settings = {ASSET_TAGS = (); }; };
 		8FC4720E1BB6512300B85D3B /* asIdeaDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4720D1BB6512300B85D3B /* asIdeaDescription.swift */; settings = {ASSET_TAGS = (); }; };
+		8FCE18F61BB75EC700992FAF /* asSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE18F51BB75EC700992FAF /* asSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8FCE18F81BB75EED00992FAF /* asChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE18F71BB75EED00992FAF /* asChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A828B4661BB631A600A80BEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4651BB631A600A80BEF /* AppDelegate.swift */; };
 		A828B4681BB631A600A80BEF /* asHackSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4671BB631A600A80BEF /* asHackSelection.swift */; };
 		A828B46B1BB631A600A80BEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A828B4691BB631A600A80BEF /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		8F0E7E301BB7286400780E05 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8FC4720B1BB6478F00B85D3B /* asModeSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asModeSelection.swift; sourceTree = "<group>"; };
 		8FC4720D1BB6512300B85D3B /* asIdeaDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asIdeaDescription.swift; sourceTree = "<group>"; };
+		8FCE18F51BB75EC700992FAF /* asSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asSettingsViewController.swift; sourceTree = "<group>"; };
+		8FCE18F71BB75EED00992FAF /* asChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asChatViewController.swift; sourceTree = "<group>"; };
 		A828B4621BB631A600A80BEF /* Async.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Async.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A828B4651BB631A600A80BEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A828B4671BB631A600A80BEF /* asHackSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asHackSelection.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				A828B46E1BB631A600A80BEF /* LaunchScreen.storyboard */,
 				A828B4711BB631A600A80BEF /* Info.plist */,
 				8F0E7E301BB7286400780E05 /* Bridging-Header.h */,
+				8FCE18F51BB75EC700992FAF /* asSettingsViewController.swift */,
+				8FCE18F71BB75EED00992FAF /* asChatViewController.swift */,
 			);
 			path = Async;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCE18F81BB75EED00992FAF /* asChatViewController.swift in Sources */,
 				A828B49F1BB671FB00A80BEF /* asSwipeViewController.swift in Sources */,
 				A828B49E1BB671FB00A80BEF /* OverlayView.swift in Sources */,
 				A828B49C1BB671FB00A80BEF /* DraggableView.swift in Sources */,
@@ -374,6 +381,7 @@
 				A828B4941BB6335500A80BEF /* asLogin.swift in Sources */,
 				A828B4681BB631A600A80BEF /* asHackSelection.swift in Sources */,
 				A828B49D1BB671FB00A80BEF /* DraggableViewBackground.swift in Sources */,
+				8FCE18F61BB75EC700992FAF /* asSettingsViewController.swift in Sources */,
 				A828B4961BB63EA600A80BEF /* asHackCell.swift in Sources */,
 				A828B4661BB631A600A80BEF /* AppDelegate.swift in Sources */,
 				8FC4720C1BB6478F00B85D3B /* asModeSelection.swift in Sources */,
