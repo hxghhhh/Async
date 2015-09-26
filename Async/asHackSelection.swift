@@ -34,9 +34,15 @@ class asEventSelection: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
        
         
-//        let cell:asHackCell = collectionView.dequeueReusableCellWithReuseIdentifier("hackCell", forIndexPath: indexPath) as hackCell
-//        
+        let cell:asHackCell = collectionView.dequeueReusableCellWithReuseIdentifier("hackCell", forIndexPath: indexPath) as! asHackCell
+       
+        cell.hackName.text = testData[indexPath.row]
+        
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
     }
 
 
