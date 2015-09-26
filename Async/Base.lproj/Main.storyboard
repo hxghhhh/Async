@@ -134,45 +134,46 @@
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WeV-N0-hyp">
-                                    <size key="itemSize" width="95" height="83"/>
+                                    <size key="itemSize" width="171" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hackCell" id="w0s-Vf-ebd" customClass="asHackCell" customModule="Async" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="83"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="95" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKW-aE-5os">
-                                                    <rect key="frame" x="26" y="57" width="45" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cal Hack" translatesAutoresizingMaskIntoConstraints="NO" id="S7T-t5-U39">
+                                                    <rect key="frame" x="18" y="8" width="136" height="94"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKW-aE-5os">
+                                                    <rect key="frame" x="63" y="121" width="45" height="21"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Zik-62-9mP"/>
+                                                        <constraint firstAttribute="height" constant="21" id="hay-qm-EY7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.32549019610000002" green="0.40784313729999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S7T-t5-U39">
-                                                    <rect key="frame" x="24" y="8" width="47" height="46"/>
-                                                    <animations/>
-                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstItem="nKW-aE-5os" firstAttribute="top" secondItem="S7T-t5-U39" secondAttribute="bottom" constant="3" id="3aB-jh-n4N"/>
-                                            <constraint firstItem="nKW-aE-5os" firstAttribute="centerX" secondItem="w0s-Vf-ebd" secondAttribute="centerX" id="LJp-6V-Vf2"/>
-                                            <constraint firstItem="S7T-t5-U39" firstAttribute="leading" secondItem="w0s-Vf-ebd" secondAttribute="leadingMargin" constant="16" id="Pbf-hy-sFS"/>
-                                            <constraint firstItem="S7T-t5-U39" firstAttribute="centerX" secondItem="nKW-aE-5os" secondAttribute="centerX" id="Ppf-RW-hBW"/>
-                                            <constraint firstItem="S7T-t5-U39" firstAttribute="top" secondItem="w0s-Vf-ebd" secondAttribute="topMargin" id="QmQ-3U-uHV"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="nKW-aE-5os" secondAttribute="bottom" constant="-3" id="jDi-oz-y5T"/>
+                                            <constraint firstItem="nKW-aE-5os" firstAttribute="leading" secondItem="w0s-Vf-ebd" secondAttribute="leadingMargin" constant="55" id="6Dh-NO-fNZ"/>
+                                            <constraint firstItem="nKW-aE-5os" firstAttribute="top" secondItem="S7T-t5-U39" secondAttribute="bottom" constant="19" id="D2O-Ug-tPd"/>
+                                            <constraint firstItem="nKW-aE-5os" firstAttribute="trailing" secondItem="S7T-t5-U39" secondAttribute="trailing" constant="-46" id="Jmc-JA-9h4"/>
+                                            <constraint firstItem="S7T-t5-U39" firstAttribute="top" secondItem="w0s-Vf-ebd" secondAttribute="topMargin" id="R1i-7F-aWm"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="S7T-t5-U39" secondAttribute="trailing" constant="9" id="cah-Sl-RK0"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="nKW-aE-5os" secondAttribute="bottom" constant="10" id="eZi-Jx-49N"/>
+                                            <constraint firstItem="S7T-t5-U39" firstAttribute="leading" secondItem="w0s-Vf-ebd" secondAttribute="leadingMargin" constant="10" id="igS-7K-ejd"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="hackImage" destination="S7T-t5-U39" id="oGk-7v-Sl4"/>
@@ -204,4 +205,7 @@
             <point key="canvasLocation" x="1205" y="474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cal Hack" width="582" height="450"/>
+    </resources>
 </document>

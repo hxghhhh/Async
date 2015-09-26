@@ -12,6 +12,6 @@ import UIKit
 class asHackCell: UICollectionViewCell {
 
     @IBOutlet var hackImage: UIImageView!    
-    @IBOutlet var hackName: UILabel!
+    @IBOutlet var hackName: UILabel! 
     
 }
