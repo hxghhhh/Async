@@ -18,6 +18,10 @@
 		A828B4861BB631A600A80BEF /* AsyncUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4851BB631A600A80BEF /* AsyncUITests.swift */; };
 		A828B4941BB6335500A80BEF /* asLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4931BB6335500A80BEF /* asLogin.swift */; settings = {ASSET_TAGS = (); }; };
 		A828B4961BB63EA600A80BEF /* asHackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4951BB63EA600A80BEF /* asHackCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A828B49C1BB671FB00A80BEF /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4981BB671FB00A80BEF /* DraggableView.swift */; settings = {ASSET_TAGS = (); }; };
+		A828B49D1BB671FB00A80BEF /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4991BB671FB00A80BEF /* DraggableViewBackground.swift */; settings = {ASSET_TAGS = (); }; };
+		A828B49E1BB671FB00A80BEF /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B49A1BB671FB00A80BEF /* OverlayView.swift */; settings = {ASSET_TAGS = (); }; };
+		A828B49F1BB671FB00A80BEF /* asSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B49B1BB671FB00A80BEF /* asSwipeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		A828B4871BB631A600A80BEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A828B4931BB6335500A80BEF /* asLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asLogin.swift; sourceTree = "<group>"; };
 		A828B4951BB63EA600A80BEF /* asHackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asHackCell.swift; sourceTree = "<group>"; };
+		A828B4981BB671FB00A80BEF /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		A828B4991BB671FB00A80BEF /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
+		A828B49A1BB671FB00A80BEF /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		A828B49B1BB671FB00A80BEF /* asSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asSwipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +114,13 @@
 			isa = PBXGroup;
 			children = (
 				A828B4691BB631A600A80BEF /* Main.storyboard */,
+				A828B4651BB631A600A80BEF /* AppDelegate.swift */,
 				8FC4720D1BB6512300B85D3B /* asIdeaDescription.swift */,
 				8FC4720B1BB6478F00B85D3B /* asModeSelection.swift */,
-				A828B4651BB631A600A80BEF /* AppDelegate.swift */,
 				A828B4671BB631A600A80BEF /* asHackSelection.swift */,
 				A828B4951BB63EA600A80BEF /* asHackCell.swift */,
 				A828B4931BB6335500A80BEF /* asLogin.swift */,
+				A828B4971BB671C800A80BEF /* asSwipeView */,
 				A828B46C1BB631A600A80BEF /* Assets.xcassets */,
 				A828B46E1BB631A600A80BEF /* LaunchScreen.storyboard */,
 				A828B4711BB631A600A80BEF /* Info.plist */,
@@ -135,6 +144,17 @@
 				A828B4871BB631A600A80BEF /* Info.plist */,
 			);
 			path = AsyncUITests;
+			sourceTree = "<group>";
+		};
+		A828B4971BB671C800A80BEF /* asSwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				A828B49B1BB671FB00A80BEF /* asSwipeViewController.swift */,
+				A828B4981BB671FB00A80BEF /* DraggableView.swift */,
+				A828B4991BB671FB00A80BEF /* DraggableViewBackground.swift */,
+				A828B49A1BB671FB00A80BEF /* OverlayView.swift */,
+			);
+			name = asSwipeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A828B49F1BB671FB00A80BEF /* asSwipeViewController.swift in Sources */,
+				A828B49E1BB671FB00A80BEF /* OverlayView.swift in Sources */,
+				A828B49C1BB671FB00A80BEF /* DraggableView.swift in Sources */,
 				8FC4720E1BB6512300B85D3B /* asIdeaDescription.swift in Sources */,
 				A828B4941BB6335500A80BEF /* asLogin.swift in Sources */,
 				A828B4681BB631A600A80BEF /* asHackSelection.swift in Sources */,
+				A828B49D1BB671FB00A80BEF /* DraggableViewBackground.swift in Sources */,
 				A828B4961BB63EA600A80BEF /* asHackCell.swift in Sources */,
 				A828B4661BB631A600A80BEF /* AppDelegate.swift in Sources */,
 				8FC4720C1BB6478F00B85D3B /* asModeSelection.swift in Sources */,
