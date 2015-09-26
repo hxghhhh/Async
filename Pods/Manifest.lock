@@ -16,14 +16,17 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.6.0):
     - FBSDKCoreKit
+  - SLPagingView (0.0.5)
 
 DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
+  - SLPagingView
 
 SPEC CHECKSUMS:
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   FBSDKCoreKit: 9954492d90c5fd65ae831395697a1660360d61f1
   FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
+  SLPagingView: ba9bb6102cb318ce56f23d0a7e49a46ddcdad7e3
 
 COCOAPODS: 0.38.2
