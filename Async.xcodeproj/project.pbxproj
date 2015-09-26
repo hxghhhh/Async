@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		754BFB38D41DFA57BACE5C8F /* libPods-Async.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0014685AC1160BDF00B7A7 /* libPods-Async.a */; };
+		8F0E7E2D1BB7281B00780E05 /* asNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E7E2C1BB7281B00780E05 /* asNetworking.swift */; settings = {ASSET_TAGS = (); }; };
 		8FC4720C1BB6478F00B85D3B /* asModeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4720B1BB6478F00B85D3B /* asModeSelection.swift */; settings = {ASSET_TAGS = (); }; };
 		8FC4720E1BB6512300B85D3B /* asIdeaDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4720D1BB6512300B85D3B /* asIdeaDescription.swift */; settings = {ASSET_TAGS = (); }; };
 		A828B4661BB631A600A80BEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828B4651BB631A600A80BEF /* AppDelegate.swift */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		3398FF8BC5794B11A7706852 /* Pods-Async.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Async.release.xcconfig"; path = "Pods/Target Support Files/Pods-Async/Pods-Async.release.xcconfig"; sourceTree = "<group>"; };
 		6BAA67A46F828572E7D5AA95 /* Pods-Async.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Async.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Async/Pods-Async.debug.xcconfig"; sourceTree = "<group>"; };
+		8F0E7E2C1BB7281B00780E05 /* asNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asNetworking.swift; sourceTree = "<group>"; };
+		8F0E7E301BB7286400780E05 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8FC4720B1BB6478F00B85D3B /* asModeSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asModeSelection.swift; sourceTree = "<group>"; };
 		8FC4720D1BB6512300B85D3B /* asIdeaDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asIdeaDescription.swift; sourceTree = "<group>"; };
 		A828B4621BB631A600A80BEF /* Async.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Async.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +107,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8F0E7E2B1BB7280F00780E05 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8F0E7E2C1BB7281B00780E05 /* asNetworking.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		A828B4591BB631A600A80BEF = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +140,7 @@
 		A828B4641BB631A600A80BEF /* Async */ = {
 			isa = PBXGroup;
 			children = (
+				8F0E7E2B1BB7280F00780E05 /* Networking */,
 				A828B4691BB631A600A80BEF /* Main.storyboard */,
 				A828B4651BB631A600A80BEF /* AppDelegate.swift */,
 				8FC4720D1BB6512300B85D3B /* asIdeaDescription.swift */,
@@ -140,6 +152,7 @@
 				A828B46C1BB631A600A80BEF /* Assets.xcassets */,
 				A828B46E1BB631A600A80BEF /* LaunchScreen.storyboard */,
 				A828B4711BB631A600A80BEF /* Info.plist */,
+				8F0E7E301BB7286400780E05 /* Bridging-Header.h */,
 			);
 			path = Async;
 			sourceTree = "<group>";
@@ -353,6 +366,7 @@
 				A828B49E1BB671FB00A80BEF /* OverlayView.swift in Sources */,
 				A828B49C1BB671FB00A80BEF /* DraggableView.swift in Sources */,
 				8FC4720E1BB6512300B85D3B /* asIdeaDescription.swift in Sources */,
+				8F0E7E2D1BB7281B00780E05 /* asNetworking.swift in Sources */,
 				A828B4941BB6335500A80BEF /* asLogin.swift in Sources */,
 				A828B4681BB631A600A80BEF /* asHackSelection.swift in Sources */,
 				A828B49D1BB671FB00A80BEF /* DraggableViewBackground.swift in Sources */,
@@ -506,6 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HAM.Async;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Async/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -521,6 +536,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HAM.Async;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Async/Bridging-Header.h";
 			};
 			name = Release;
 		};
