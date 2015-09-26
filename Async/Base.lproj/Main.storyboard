@@ -175,7 +175,7 @@
                                                     <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKW-aE-5os">
-                                                    <rect key="frame" x="63" y="121" width="45" height="21"/>
+                                                    <rect key="frame" x="18" y="121" width="136" height="21"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hay-qm-EY7"/>
@@ -190,9 +190,9 @@
                                         </view>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstItem="nKW-aE-5os" firstAttribute="leading" secondItem="w0s-Vf-ebd" secondAttribute="leadingMargin" constant="55" id="6Dh-NO-fNZ"/>
+                                            <constraint firstItem="nKW-aE-5os" firstAttribute="leading" secondItem="w0s-Vf-ebd" secondAttribute="leadingMargin" constant="10" id="6Dh-NO-fNZ"/>
                                             <constraint firstItem="nKW-aE-5os" firstAttribute="top" secondItem="S7T-t5-U39" secondAttribute="bottom" constant="19" id="D2O-Ug-tPd"/>
-                                            <constraint firstItem="nKW-aE-5os" firstAttribute="trailing" secondItem="S7T-t5-U39" secondAttribute="trailing" constant="-46" id="Jmc-JA-9h4"/>
+                                            <constraint firstItem="nKW-aE-5os" firstAttribute="trailing" secondItem="S7T-t5-U39" secondAttribute="trailing" id="Jmc-JA-9h4"/>
                                             <constraint firstItem="S7T-t5-U39" firstAttribute="top" secondItem="w0s-Vf-ebd" secondAttribute="topMargin" id="R1i-7F-aWm"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="S7T-t5-U39" secondAttribute="trailing" constant="9" id="cah-Sl-RK0"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="nKW-aE-5os" secondAttribute="bottom" constant="10" id="eZi-Jx-49N"/>
