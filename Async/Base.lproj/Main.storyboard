@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -49,6 +50,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="445" y="474"/>
+        </scene>
+        <!--As Mode Selection View Controller-->
+        <scene sceneID="J2p-Fz-IwZ">
+            <objects>
+                <viewController id="Wg3-Q1-tlp" customClass="asModeSelectionViewController" customModule="Async" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cAM-WU-lvg"/>
+                        <viewControllerLayoutGuide type="bottom" id="rcX-Xb-P7S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TYf-6A-PwP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk2-Py-7ft">
+                                <rect key="frame" x="235" y="370" width="130" height="30"/>
+                                <state key="normal" title="Looking for a idea?"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AJ-m0-Vg4">
+                                <rect key="frame" x="230" y="170" width="141" height="30"/>
+                                <state key="normal" title="Looking for a group?"/>
+                                <connections>
+                                    <segue destination="8ps-L8-Taq" kind="show" id="eRI-lj-y8w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3AJ-m0-Vg4" firstAttribute="centerX" secondItem="TYf-6A-PwP" secondAttribute="centerX" id="Un3-em-WH6"/>
+                            <constraint firstItem="rcX-Xb-P7S" firstAttribute="top" secondItem="3AJ-m0-Vg4" secondAttribute="bottom" multiplier="3:1" id="ZzQ-LQ-c7N"/>
+                            <constraint firstItem="Zk2-Py-7ft" firstAttribute="centerX" secondItem="TYf-6A-PwP" secondAttribute="centerX" id="xN0-MC-e0n"/>
+                            <constraint firstItem="rcX-Xb-P7S" firstAttribute="top" secondItem="Zk2-Py-7ft" secondAttribute="bottom" multiplier="3:2" id="z14-hd-qlR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9p-Ke-lib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="474"/>
+        </scene>
+        <!--As Idea Description View Controller-->
+        <scene sceneID="EF8-S2-ZR6">
+            <objects>
+                <viewController id="8ps-L8-Taq" customClass="asIdeaDescriptionViewController" customModule="Async" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HTy-Dn-YXI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rfe-dH-3F0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JbH-zD-W1x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcZ-O8-9s3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2789" y="7"/>
         </scene>
         <!--As Event Selection-->
         <scene sceneID="i0W-Ls-dAK">
@@ -121,6 +177,7 @@
                                         <connections>
                                             <outlet property="hackImage" destination="S7T-t5-U39" id="oGk-7v-Sl4"/>
                                             <outlet property="hackName" destination="nKW-aE-5os" id="5rY-EJ-re1"/>
+                                            <segue destination="Wg3-Q1-tlp" kind="show" id="qTX-rE-xZE"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
