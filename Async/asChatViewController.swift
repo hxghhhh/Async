@@ -38,7 +38,9 @@ class asChatViewController: UIViewController, UITableViewDataSource, UITableView
             if users != nil {
                 for user in users! {
                     let username = user["username"] as? String ?? "Anon"
-                    self.matchedUsers.append(username)
+                    if(!self.matchedUsers.contains(username)){
+                        self.matchedUsers.append(username)
+                    }
                    
                 }
                  self.matchTableView.reloadData()
@@ -49,6 +51,10 @@ class asChatViewController: UIViewController, UITableViewDataSource, UITableView
 
         }
         
+    }
+    
+    override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(true)
         
     }
     
