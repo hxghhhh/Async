@@ -28,14 +28,8 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         super.init(coder: aDecoder)!
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        super.layoutSubviews()
-        self.setupView()
-    
-        exampleCardLabels = []
-
-        
+    func queryForUsers() -> Void {
+        self.exampleCardLabels = []
         let query = PFQuery(className: "_User")
         query.findObjectsInBackgroundWithBlock { (users, error) -> Void in
             print(users)
@@ -46,14 +40,28 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
                     self.exampleCardLabels.append(username)
                 }
                 print(self.exampleCardLabels)
-                self.allCards = []
-                self.loadedCards = []
-                self.cardsLoadedIndex = 0
+                
+
+
                 self.loadCards()
             } else {
                 
             }
         }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        super.layoutSubviews()
+        self.setupView()
+        self.loadedCards = []
+        self.allCards = []
+        self.cardsLoadedIndex = 0
+
+
+        queryForUsers()
+
+        
+
         
     }
 
@@ -80,24 +88,34 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
 
     func loadCards() -> Void {
-        if exampleCardLabels.count > 0 {
-            let numLoadedCardsCap = exampleCardLabels.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : exampleCardLabels.count
+        if self.exampleCardLabels.count > 0 {
+            let numAlreadyLoaded = loadedCards.count
+            let numLoadedCardsCap = exampleCardLabels.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : exampleCardLabels.count + numAlreadyLoaded
             for var i = 0; i < exampleCardLabels.count; i++ {
                 let newCard: DraggableView = self.createDraggableViewWithDataAtIndex(i)
                 allCards.append(newCard)
-                if i < numLoadedCardsCap {
+                let index = i + numAlreadyLoaded - 1
+                if index < numLoadedCardsCap {
                     loadedCards.append(newCard)
+                    if index > 0 {
+                        self.insertSubview(loadedCards[index], belowSubview: loadedCards[index-1])
+                    } else {
+                        self.addSubview(loadedCards[i])
+                    }
+                    cardsLoadedIndex = cardsLoadedIndex + 1
                 }
             }
 
+            /*
             for var i = 0; i < loadedCards.count; i++ {
                 if i > 0 {
                     self.insertSubview(loadedCards[i], belowSubview: loadedCards[i - 1])
                 } else {
-                    self.addSubview(loadedCards[i])
+                        self.addSubview(loadedCards[i])
                 }
                 cardsLoadedIndex = cardsLoadedIndex + 1
             }
+*/
         }
     }
 
@@ -108,6 +126,8 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
             loadedCards.append(allCards[cardsLoadedIndex])
             cardsLoadedIndex = cardsLoadedIndex + 1
             self.insertSubview(loadedCards[MAX_BUFFER_SIZE - 1], belowSubview: loadedCards[MAX_BUFFER_SIZE - 2])
+        } else {
+            queryForUsers()
         }
     }
     
@@ -118,6 +138,8 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
             loadedCards.append(allCards[cardsLoadedIndex])
             cardsLoadedIndex = cardsLoadedIndex + 1
             self.insertSubview(loadedCards[MAX_BUFFER_SIZE - 1], belowSubview: loadedCards[MAX_BUFFER_SIZE - 2])
+        } else {
+            queryForUsers()
         }
     }
 
