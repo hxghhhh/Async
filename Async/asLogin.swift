@@ -16,7 +16,7 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 
     func onProfileUpdated(notification: NSNotification)
     {
-       // print(FBSDKProfile.currentProfile().name)
+        // Current profile here
     }
 
     override func viewDidLoad() {
@@ -62,7 +62,7 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         //create userObject here
         print(result)
         // Create request for user's Facebook data
-        self.profile = FBSDKProfile.currentProfile()
+       // let profile = FBSDKProfile.currentProfile()
         let request = FBSDKGraphRequest(graphPath:"me", parameters:nil)
         
         // Send request to Facebook
@@ -113,7 +113,6 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 //        guard let profile = self.profile else {
 //            return false
 //        }
-<<<<<<< HEAD
 //        print(profile.userID)
 //        var userExists = false
 //        query?.whereKey("fbID", equalTo: profile.userID)
@@ -126,8 +125,6 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 //            return userExists
 //        }
 //    }
-    
-=======
 //        
 //        let query = PFQuery(className: "_PFUser")
 //        let userQuery = PFUser.query()
@@ -138,5 +135,5 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 //        
         return true
     }
->>>>>>> master
+        
 }
