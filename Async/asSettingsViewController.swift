@@ -42,7 +42,8 @@ class asSettingsViewController: UIViewController {
         profile_view.layer.cornerRadius = profile_view.frame.size.height/2
         profile_view.clipsToBounds = true
         self.hackerImage.addSubview(profile_view)
-        self.hackerImage.backgroundColor = UIColor(netHex: 5474020)
+        self.hackerImage.backgroundColor = UIColor(netHex: 0x175676)
+        self.hackerImage.alpha = 0.9
     }
 
     override func viewDidLoad() {
@@ -51,7 +52,7 @@ class asSettingsViewController: UIViewController {
         logo = logo?.imageWithRenderingMode(.AlwaysTemplate)
         titleView = UIImageView(image: logo)
         self.navigationItem.titleView = titleView
-        self.masterView.backgroundColor = UIColor(netHex: 0x175676)
+        //self.masterView.backgroundColor = UIColor(netHex: 0x175676)
         // Do any additional setup after loading the view.
 
         if (FBSDKAccessToken.currentAccessToken() != nil) {
