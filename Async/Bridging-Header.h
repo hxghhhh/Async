@@ -12,5 +12,6 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <SLPagingView/SLPagingViewController.h>
+#import <Parse/Parse.h>
 
 #endif /* Bridging_Header_h */

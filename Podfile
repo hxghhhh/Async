@@ -6,6 +6,7 @@ target 'Async' do
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'SLPagingView'
+pod 'Parse'
 end
 
 target 'AsyncTests' do
