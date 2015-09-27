@@ -18,13 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Async_logo" translatesAutoresizingMaskIntoConstraints="NO" id="92I-kC-PDl">
-                                <rect key="frame" x="152" y="65" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Async_logo" translatesAutoresizingMaskIntoConstraints="NO" id="92I-kC-PDl">
+                                <rect key="frame" x="92" y="77" width="250" height="250"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.078431372549019607" green="0.26666666666666666" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="92I-kC-PDl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="57" id="Qrr-1a-hgW"/>
+                            <constraint firstItem="92I-kC-PDl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="sNy-Cr-DiO"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="B77-gx-tsi" kind="show" identifier="gotoEventSelection" id="qMI-ZM-XB1"/>
