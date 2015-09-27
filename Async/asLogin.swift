@@ -13,7 +13,12 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     
     let loginButton = FBSDKLoginButton()
     var profile = FBSDKProfile.currentProfile()
-    
+
+    func onProfileUpdated(notification: NSNotification)
+    {
+       // print(FBSDKProfile.currentProfile().name)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.center = self.view.center
@@ -23,8 +28,13 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdate", name: FBSDKProfileDidChangeNotification, object: nil)
 
         // Do any additional setup after loading the view, typically from a nib.
+        FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKProfileDidChangeNotification, object: nil)
+        if(FBSDKAccessToken.currentAccessToken() != nil){
+            self.performSegueWithIdentifier("gotoEventSelection", sender: self)
+        }
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         loginButton.delegate = self
@@ -41,17 +51,13 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         if(FBSDKAccessToken.currentAccessToken() != nil){
             self.performSegueWithIdentifier("gotoEventSelection", sender: self)
         }
-    }
-    
+    }    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func onProfileUpdate() {
-        profile = FBSDKProfile.currentProfile()
-    }
-    
+
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         //create userObject here
         print(result)
@@ -107,6 +113,7 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 //        guard let profile = self.profile else {
 //            return false
 //        }
+<<<<<<< HEAD
 //        print(profile.userID)
 //        var userExists = false
 //        query?.whereKey("fbID", equalTo: profile.userID)
@@ -120,4 +127,16 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 //        }
 //    }
     
+=======
+//        
+//        let query = PFQuery(className: "_PFUser")
+//        let userQuery = PFUser.query()
+//        userQuery?.whereKey("FBId", equalTo: scimitar);
+//        userQuery?.findObjectsInBackgroundWithBlock({ ([PFObject]?, NSError?) -> Void in
+//            <#code#>
+//        })
+//        
+        return true
+    }
+>>>>>>> master
 }

@@ -18,21 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Async_logo" translatesAutoresizingMaskIntoConstraints="NO" id="92I-kC-PDl">
-                                <rect key="frame" x="152" y="65" width="200" height="200"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Async" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtA-IP-Ku2">
+                                <rect key="frame" x="277" y="178" width="47" height="21"/>
                                 <animations/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.078431372549019607" green="0.26666666666666666" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jtA-IP-Ku2" secondAttribute="bottom" constant="401" id="GoG-jz-dkP"/>
+                            <constraint firstItem="jtA-IP-Ku2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Utc-bD-bOK"/>
+                            <constraint firstItem="jtA-IP-Ku2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="158" id="q4l-Tr-bcL"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <segue destination="B77-gx-tsi" kind="show" identifier="gotoEventSelection" id="qMI-ZM-XB1"/>
+                        <segue destination="B77-gx-tsi" kind="show" identifier="gotoEventSelection" id="P2p-0Y-voc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1391" y="864"/>
+            <point key="canvasLocation" x="1164" y="896"/>
         </scene>
         <!--As Mode Selection View Controller-->
         <scene sceneID="J2p-Fz-IwZ">
@@ -338,8 +346,11 @@
                         <outlet property="hackerImage" destination="nEE-8x-e1D" id="pnH-sH-lDG"/>
                         <outlet property="hackerName" destination="7vg-tf-uy6" id="3km-5R-VVy"/>
                         <outlet property="hackerSkill" destination="xln-zO-BqH" id="M6p-Rh-vRP"/>
+<<<<<<< HEAD
                         <outlet property="masterView" destination="JCw-Ia-36d" id="gTH-o4-j3U"/>
+=======
                         <segue destination="BYZ-38-t0r" kind="show" identifier="gotoLogin" id="6Vl-Q6-y9E"/>
+>>>>>>> 4ab0f27bc29b3c9f143d9434a0219abca9128555
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5E-vt-0Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,7 +430,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Async_logo" width="250" height="250"/>
         <image name="Cal Hack" width="582" height="450"/>
     </resources>
 </document>
