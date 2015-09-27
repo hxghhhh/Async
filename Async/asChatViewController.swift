@@ -10,15 +10,23 @@ import UIKit
 
 class asChatViewController: UIViewController {
 
+    var titleView: UIImageView? = nil
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        var logo = UIImage(named: "chat")
+        logo = logo?.imageWithRenderingMode(.AlwaysTemplate)
+        titleView = UIImageView(image: logo)
+        self.navigationItem.titleView = titleView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var logo = UIImage(named: "chat")
+        logo = logo?.imageWithRenderingMode(.AlwaysTemplate)
+        titleView = UIImageView(image: logo)
+        self.navigationItem.titleView = titleView
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
