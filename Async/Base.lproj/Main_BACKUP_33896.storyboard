@@ -18,6 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Async" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtA-IP-Ku2">
                                 <rect key="frame" x="277" y="178" width="47" height="21"/>
                                 <animations/>
@@ -25,6 +26,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+=======
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4SL-nL-45I">
                                 <rect key="frame" x="160" y="162" width="280" height="276"/>
                                 <subviews>
@@ -53,10 +55,20 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+>>>>>>> Started working on ui stuff
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.078431372549019607" green="0.26666666666666666" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+<<<<<<< HEAD
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jtA-IP-Ku2" secondAttribute="bottom" constant="401" id="GoG-jz-dkP"/>
+                            <constraint firstItem="jtA-IP-Ku2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Utc-bD-bOK"/>
+                            <constraint firstItem="jtA-IP-Ku2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="158" id="q4l-Tr-bcL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="B77-gx-tsi" kind="show" identifier="gotoEventSelection" id="P2p-0Y-voc"/>
+=======
                             <constraint firstItem="4SL-nL-45I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9ZH-9M-qLf"/>
                             <constraint firstItem="4SL-nL-45I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BEq-Kl-dZa"/>
                         </constraints>
@@ -64,6 +76,7 @@
                     <connections>
                         <outlet property="loginButton" destination="49F-VN-ufv" id="FgV-cJ-vNb"/>
                         <outlet property="logoLabel" destination="4o9-LK-p2F" id="hR0-8f-nCU"/>
+>>>>>>> Started working on ui stuff
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -374,8 +387,11 @@
                         <outlet property="hackerImage" destination="nEE-8x-e1D" id="pnH-sH-lDG"/>
                         <outlet property="hackerName" destination="7vg-tf-uy6" id="3km-5R-VVy"/>
                         <outlet property="hackerSkill" destination="xln-zO-BqH" id="M6p-Rh-vRP"/>
+<<<<<<< HEAD
                         <outlet property="masterView" destination="JCw-Ia-36d" id="gTH-o4-j3U"/>
+=======
                         <segue destination="BYZ-38-t0r" kind="show" identifier="gotoLogin" id="6Vl-Q6-y9E"/>
+>>>>>>> 4ab0f27bc29b3c9f143d9434a0219abca9128555
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5E-vt-0Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>

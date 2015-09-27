@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		754BFB38D41DFA57BACE5C8F /* libPods-Async.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0014685AC1160BDF00B7A7 /* libPods-Async.a */; };
 		8F0E7E2D1BB7281B00780E05 /* asNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E7E2C1BB7281B00780E05 /* asNetworking.swift */; settings = {ASSET_TAGS = (); }; };
+		8F45A43D1BB7C4E800AB17F8 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F45A43C1BB7C4E800AB17F8 /* extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		8FC4720C1BB6478F00B85D3B /* asModeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4720B1BB6478F00B85D3B /* asModeSelection.swift */; settings = {ASSET_TAGS = (); }; };
 		8FC4720E1BB6512300B85D3B /* asIdeaDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4720D1BB6512300B85D3B /* asIdeaDescription.swift */; settings = {ASSET_TAGS = (); }; };
 		8FCE18F61BB75EC700992FAF /* asSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE18F51BB75EC700992FAF /* asSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -51,6 +52,7 @@
 		6BAA67A46F828572E7D5AA95 /* Pods-Async.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Async.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Async/Pods-Async.debug.xcconfig"; sourceTree = "<group>"; };
 		8F0E7E2C1BB7281B00780E05 /* asNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asNetworking.swift; sourceTree = "<group>"; };
 		8F0E7E301BB7286400780E05 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8F45A43C1BB7C4E800AB17F8 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		8FC4720B1BB6478F00B85D3B /* asModeSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asModeSelection.swift; sourceTree = "<group>"; };
 		8FC4720D1BB6512300B85D3B /* asIdeaDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asIdeaDescription.swift; sourceTree = "<group>"; };
 		8FCE18F51BB75EC700992FAF /* asSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asSettingsViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				A828B46E1BB631A600A80BEF /* LaunchScreen.storyboard */,
 				A828B4711BB631A600A80BEF /* Info.plist */,
 				8F0E7E301BB7286400780E05 /* Bridging-Header.h */,
+				8F45A43C1BB7C4E800AB17F8 /* extensions.swift */,
 			);
 			path = Async;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				A828B49E1BB671FB00A80BEF /* OverlayView.swift in Sources */,
 				A828B49C1BB671FB00A80BEF /* DraggableView.swift in Sources */,
 				A89288781BB7551C004B7D87 /* SwiftyJSON.swift in Sources */,
+				8F45A43D1BB7C4E800AB17F8 /* extensions.swift in Sources */,
 				8FC4720E1BB6512300B85D3B /* asIdeaDescription.swift in Sources */,
 				8F0E7E2D1BB7281B00780E05 /* asNetworking.swift in Sources */,
 				A828B4941BB6335500A80BEF /* asLogin.swift in Sources */,

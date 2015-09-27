@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Async" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtA-IP-Ku2">
-                                <rect key="frame" x="277" y="178" width="47" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4SL-nL-45I">
                                 <rect key="frame" x="160" y="162" width="280" height="276"/>
                                 <subviews>
@@ -68,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="896"/>
+            <point key="canvasLocation" x="847" y="856"/>
         </scene>
         <!--As Mode Selection View Controller-->
         <scene sceneID="J2p-Fz-IwZ">
@@ -224,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBl-LL-ua4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2299" y="857"/>
+            <point key="canvasLocation" x="1987" y="856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l7n-D3-wSa">
@@ -334,24 +327,21 @@
                                     <rect key="frame" x="61" y="128" width="279" height="382"/>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4l-cq-jTo">
+                                <rect key="frame" x="20" y="470" width="560" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nEE-8x-e1D">
-                                <rect key="frame" x="0.0" y="-10" width="600" height="205"/>
+                                <rect key="frame" x="20" y="0.0" width="560" height="200"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="205" id="uVA-RD-rXh"/>
+                                    <constraint firstAttribute="height" constant="200" id="uVA-RD-rXh"/>
                                 </constraints>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="108"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4l-cq-jTo">
-                                <rect key="frame" x="20" y="470" width="560" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="userPressedLogoutBtn:" destination="EPB-sz-Mhb" eventType="touchUpInside" id="Pjd-rD-dHb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -359,13 +349,13 @@
                             <constraint firstItem="x4l-cq-jTo" firstAttribute="top" secondItem="U0d-OG-xPj" secondAttribute="bottom" id="3qk-OZ-Mfs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U0d-OG-xPj" secondAttribute="trailing" constant="40" id="9Qc-Mi-umA"/>
                             <constraint firstItem="M9Z-HH-4Qx" firstAttribute="top" secondItem="x4l-cq-jTo" secondAttribute="bottom" constant="100" id="IWd-rL-xCU"/>
-                            <constraint firstItem="U0d-OG-xPj" firstAttribute="top" secondItem="nEE-8x-e1D" secondAttribute="bottom" constant="24.5" id="Jae-Rw-4VO"/>
-                            <constraint firstItem="nEE-8x-e1D" firstAttribute="leading" secondItem="JCw-Ia-36d" secondAttribute="leadingMargin" constant="-20" id="NNX-Ed-5kR"/>
+                            <constraint firstItem="U0d-OG-xPj" firstAttribute="top" secondItem="nEE-8x-e1D" secondAttribute="bottom" constant="20" id="Jae-Rw-4VO"/>
+                            <constraint firstItem="nEE-8x-e1D" firstAttribute="leading" secondItem="JCw-Ia-36d" secondAttribute="leadingMargin" id="NNX-Ed-5kR"/>
                             <constraint firstItem="U0d-OG-xPj" firstAttribute="leading" secondItem="JCw-Ia-36d" secondAttribute="leadingMargin" constant="41" id="Nkl-qE-7Hi"/>
                             <constraint firstItem="x4l-cq-jTo" firstAttribute="leading" secondItem="JCw-Ia-36d" secondAttribute="leadingMargin" id="rvl-YH-OQD"/>
-                            <constraint firstItem="nEE-8x-e1D" firstAttribute="top" secondItem="JCw-Ia-36d" secondAttribute="topMargin" constant="-10" id="v3D-aZ-I5r"/>
+                            <constraint firstItem="nEE-8x-e1D" firstAttribute="top" secondItem="JCw-Ia-36d" secondAttribute="topMargin" id="v3D-aZ-I5r"/>
                             <constraint firstItem="x4l-cq-jTo" firstAttribute="trailing" secondItem="JCw-Ia-36d" secondAttribute="trailingMargin" id="ydo-bg-IaQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nEE-8x-e1D" secondAttribute="trailing" constant="-20" id="zaD-qB-Ut7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nEE-8x-e1D" secondAttribute="trailing" id="zaD-qB-Ut7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -374,8 +364,6 @@
                         <outlet property="hackerImage" destination="nEE-8x-e1D" id="pnH-sH-lDG"/>
                         <outlet property="hackerName" destination="7vg-tf-uy6" id="3km-5R-VVy"/>
                         <outlet property="hackerSkill" destination="xln-zO-BqH" id="M6p-Rh-vRP"/>
-                        <outlet property="masterView" destination="JCw-Ia-36d" id="gTH-o4-j3U"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="gotoLogin" id="6Vl-Q6-y9E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5E-vt-0Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>

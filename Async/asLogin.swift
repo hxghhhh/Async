@@ -126,5 +126,11 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 //        
         return true
     }
+<<<<<<< HEAD
         
+=======
+    
+    @IBAction func onClick(sender: AnyObject) {
+    }
+>>>>>>> Started working on ui stuff
 }
