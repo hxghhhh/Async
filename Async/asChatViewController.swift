@@ -8,7 +8,11 @@
 
 import UIKit
 
-class asChatViewController: UIViewController {
+class asChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var testData:[Int] = [1,2,3,4,5,6,7,8,9]
+
+    @IBOutlet var matchTableView: UITableView!
 
     var titleView: UIImageView? = nil
     
@@ -29,15 +33,20 @@ class asChatViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //TableView - Delegates
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+        
     }
-    */
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "matchCell")
+        
+        cell.textLabel!.text = "Working"
+        
+        return cell
+    } 
 
 }

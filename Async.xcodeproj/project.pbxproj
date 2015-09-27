@@ -154,13 +154,13 @@
 				A828B4671BB631A600A80BEF /* asHackSelection.swift */,
 				A828B4951BB63EA600A80BEF /* asHackCell.swift */,
 				A828B4931BB6335500A80BEF /* asLogin.swift */,
+				8FCE18F51BB75EC700992FAF /* asSettingsViewController.swift */,
+				8FCE18F71BB75EED00992FAF /* asChatViewController.swift */,
 				A828B4971BB671C800A80BEF /* asSwipeView */,
 				A828B46C1BB631A600A80BEF /* Assets.xcassets */,
 				A828B46E1BB631A600A80BEF /* LaunchScreen.storyboard */,
 				A828B4711BB631A600A80BEF /* Info.plist */,
 				8F0E7E301BB7286400780E05 /* Bridging-Header.h */,
-				8FCE18F51BB75EC700992FAF /* asSettingsViewController.swift */,
-				8FCE18F71BB75EED00992FAF /* asChatViewController.swift */,
 			);
 			path = Async;
 			sourceTree = "<group>";
