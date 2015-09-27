@@ -19,6 +19,9 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdate", name: FBSDKProfileDidChangeNotification, object: nil)
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -35,8 +38,6 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdate", name: FBSDKProfileDidChangeNotification, object: nil)
-        FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
         if(FBSDKAccessToken.currentAccessToken() != nil){
             self.performSegueWithIdentifier("gotoEventSelection", sender: self)
         }
@@ -55,7 +56,7 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         //create userObject here
         print(result)
         // Create request for user's Facebook data
-       // let profile = FBSDKProfile.currentProfile()
+        self.profile = FBSDKProfile.currentProfile()
         let request = FBSDKGraphRequest(graphPath:"me", parameters:nil)
         
         // Send request to Facebook
@@ -73,7 +74,6 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
                 let username = userData["name"] as? String
                 let fbID = userData["id"] as? String
                 self.createNewUser(username!, id: fbID!)
-                
             }
         }
     }
@@ -84,7 +84,7 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     
     
     func createNewUser(newUserName:String, id:String) {
-        var user = PFUser()
+        let user = PFUser()
         user.username = newUserName
         user.password = "1"
         user["fbID"] = id
@@ -102,24 +102,22 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         }
     }
     
-    func userAlreadyExist() -> Bool {
-//        let userQuery = PFUser.query();
-//        userQuery?.includeKey("fbID");
-//        
-//        // execute the query
-//        userQuery?.findObjectsInBackgroundWithBlock {
-//            (objects: [AnyObject]?, error: NSError?) -> Void in
-//            print(objects)
+//    func userAlreadyExist() -> Bool {
+//        let query = PFUser.query()
+//        guard let profile = self.profile else {
+//            return false
 //        }
-//        
-//        let query = PFQuery(className: "_PFUser")
-//        let userQuery = PFUser.query()
-//        userQuery?.whereKey("FBId", equalTo: scimitar);
-//        userQuery?.findObjectsInBackgroundWithBlock({ ([PFObject]?, NSError?) -> Void in
-//            <#code#>
-//        })
-//        
-        return true
-    }
-        
+//        print(profile.userID)
+//        var userExists = false
+//        query?.whereKey("fbID", equalTo: profile.userID)
+//        query?.getFirstObjectInBackgroundWithBlock(){ (object, error) -> Void in
+//            if object != nil {
+//                userExists = true
+//            } else {
+//                userExists = false
+//            }
+//            return userExists
+//        }
+//    }
+    
 }
