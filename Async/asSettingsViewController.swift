@@ -10,7 +10,16 @@ import UIKit
 
 class asSettingsViewController: UIViewController {
 
+    @IBOutlet var hackerImage: UIImageView!
+    @IBOutlet var hackerName: UILabel!
+    @IBOutlet var hackerAge: UILabel!
+    @IBOutlet var hackerDescription: UILabel!
+    @IBOutlet var hackerSkill: UILabel!
+    
+    
+    
     var titleView: UIImageView? = nil
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,10 +42,13 @@ class asSettingsViewController: UIViewController {
                 print("Error: \(error)")
             } else {
                 print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as? NSString ?? "Need permission"
+                let userName : NSString = result.valueForKey("name") as? NSString ?? "Empty"
+                self.hackerName.text = userName as String
                 print("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as? NSString ?? "Need permission"
+                let userEmail : NSString = result.valueForKey("email") as? NSString ?? "Empty"
                 print("User Email is: \(userEmail)")
+                let ageRange:NSString = result["age_range"] as? NSString ?? "Empty"
+                 print("User agerange is: \(ageRange)")
             }
         }
     }
