@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "1443315191_editor_setting_gear_.png",
+      "filename" : "gear.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "gear@2x.png",
       "scale" : "2x"
     },
     {

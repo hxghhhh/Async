@@ -10,9 +10,22 @@ import UIKit
 
 class asSettingsViewController: UIViewController {
 
+    var titleView: UIImageView? = nil
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        var logo = UIImage(named: "settings")
+        logo = logo?.imageWithRenderingMode(.AlwaysTemplate)
+        titleView = UIImageView(image: logo)
+        self.navigationItem.titleView = titleView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var logo = UIImage(named: "settings")
+        logo = logo?.imageWithRenderingMode(.AlwaysTemplate)
+        titleView = UIImageView(image: logo)
+        self.navigationItem.titleView = titleView
         // Do any additional setup after loading the view.
     }
 

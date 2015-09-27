@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "1443315248_Untitled-2-36.png",
+      "filename" : "rchat.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "rchat@2x.png",
       "scale" : "2x"
     },
     {
