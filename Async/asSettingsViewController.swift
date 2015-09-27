@@ -67,6 +67,10 @@ class asSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func userPressedLogoutBtn(sender: AnyObject) {
+        FBSDKLoginManager().logOut()
+        performSegueWithIdentifier("gotoLogin", sender: nil)
+    }
 
     /*
     // MARK: - Navigation
