@@ -36,19 +36,28 @@ class asSettingsViewController: UIViewController {
         titleView = UIImageView(image: logo)
         self.navigationItem.titleView = titleView
         // Do any additional setup after loading the view.
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.startWithCompletionHandler { (connection, result, error) -> Void in
-            if error != nil {
-                print("Error: \(error)")
-            } else {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as? NSString ?? "Empty"
-                self.hackerName.text = userName as String
-                print("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as? NSString ?? "Empty"
-                print("User Email is: \(userEmail)")
-                let ageRange:NSString = result["age_range"] as? NSString ?? "Empty"
-                 print("User agerange is: \(ageRange)")
+
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id,name,age,picture"])
+            graphRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+                if error != nil {
+                    print("Error: \(error)")
+                } else {
+                    print("fetched user: \(result)")
+                    
+                    let imageString = result.valueForKey("picture")?.valueForKey("data")?.valueForKey("url") as? String
+                    let url = NSURL(string: imageString!)
+                    
+                    let userName : NSString = result.valueForKey("name") as? NSString ?? "Empty"
+                    self.hackerName.text = userName as String
+                    print("User Name is: \(userName)")
+                    
+                    let userEmail : NSString = result.valueForKey("email") as? NSString ?? "Empty"
+                    print("User Email is: \(userEmail)")
+                    
+                    let ageRange:NSString = result["age_range"] as? NSString ?? "Empty"
+                     print("User agerange is: \(ageRange)")
+                }
             }
         }
     }
