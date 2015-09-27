@@ -40,8 +40,9 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         }
         let user = PFUser.currentUser()!
         let tmp = user["fbID"]
+        let visited = user["visited"] as! [String]
         
-        query.whereKey("fbID", notEqualTo: tmp).whereKey("fbID", notContainedIn: user["visited"] as! [AnyObject])
+        query.whereKey("fbID", notEqualTo: tmp).whereKey("fbID", notContainedIn: visited)
         query.findObjectsInBackgroundWithBlock { (users, error) -> Void in
             print(users)
             if users != nil {
@@ -126,6 +127,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         let user = PFUser.currentUser()!
         var visited_users = user["visited"] as! [String]
         visited_users.append(loadedCards[0].user["fbID"] as! String)
+        user.saveInBackground()
         loadedCards.removeAtIndex(0)
 
         if cardsLoadedIndex < allCards.count {
@@ -140,6 +142,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     func cardSwipedRight(card: UIView) -> Void {
         let user = PFUser.currentUser()!
         var visited_users = user["visited"] as! [String]
+        user.saveInBackground()
         //        var : [PFUSer] visited_users = user["visited"]
         visited_users.append(loadedCards[0].user["fbID"] as! String)
         var liked_users = user["liked"] as! [String]
