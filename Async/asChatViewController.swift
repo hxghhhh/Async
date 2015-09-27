@@ -10,7 +10,7 @@ import UIKit
 
 class asChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var testData:[Int] = [1,2,3,4,5,6,7,8,9]
+    var matchedUsers:[String] = []
 
     @IBOutlet var matchTableView: UITableView!
 
@@ -22,6 +22,7 @@ class asChatViewController: UIViewController, UITableViewDataSource, UITableView
         logo = logo?.imageWithRenderingMode(.AlwaysTemplate)
         titleView = UIImageView(image: logo)
         self.navigationItem.titleView = titleView
+        
     }
     
     override func viewDidLoad() {
@@ -31,12 +32,31 @@ class asChatViewController: UIViewController, UITableViewDataSource, UITableView
         titleView = UIImageView(image: logo)
         self.navigationItem.titleView = titleView
         // Do any additional setup after loading the view.
+        let query = PFQuery(className: "_User")
+        query.findObjectsInBackgroundWithBlock { (users, error) -> Void in
+            print(users)
+            if users != nil {
+                for user in users! {
+                    let username = user["username"] as? String ?? "Anon"
+                    self.matchedUsers.append(username)
+                   
+                }
+                 self.matchTableView.reloadData()
+                
+            } else {
+                
+            }
+
+        }
+        
+        
     }
+    
     
     //TableView - Delegates
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return matchedUsers.count
         
     }
     
@@ -44,9 +64,13 @@ class asChatViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "matchCell")
         
-        cell.textLabel!.text = "Working"
+        cell.textLabel!.text = matchedUsers[indexPath.row]
         
         return cell
-    } 
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 
 }

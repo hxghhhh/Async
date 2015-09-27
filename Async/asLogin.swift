@@ -133,7 +133,7 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 //            <#code#>
 //        })
 //        
-        return true
-    }
+//        return true
+//    }
         
 }
