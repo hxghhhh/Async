@@ -38,15 +38,16 @@ class asSettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id,name,age,picture"])
+            let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
             graphRequest.startWithCompletionHandler { (connection, result, error) -> Void in
                 if error != nil {
                     print("Error: \(error)")
                 } else {
                     print("fetched user: \(result)")
-                    
-                    let imageString = result.valueForKey("picture")?.valueForKey("data")?.valueForKey("url") as? String
-                    let url = NSURL(string: imageString!)
+                    let profile = FBSDKProfile.currentProfile()
+                
+                    //let imageString = result.valueForKey("picture")?.valueForKey("data")?.valueForKey("url") as? String
+                    //let url = NSURL(string: imageString!)
                     
                     let userName : NSString = result.valueForKey("name") as? NSString ?? "Empty"
                     self.hackerName.text = userName as String
@@ -61,6 +62,9 @@ class asSettingsViewController: UIViewController {
             }
         }
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
