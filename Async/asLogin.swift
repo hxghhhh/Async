@@ -11,8 +11,13 @@ import UIKit
 
 class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     
+    @IBOutlet weak var logoLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        logoLabel.setTextColor(UIColor(netHex: 0x4D474A), before: "Sync")
         let loginButton = FBSDKLoginButton()
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
@@ -31,5 +36,8 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
+    }
+    
+    @IBAction func onClick(sender: AnyObject) {
     }
 }
