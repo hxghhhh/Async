@@ -11,6 +11,10 @@ import UIKit
 
 class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     
+    func onProfileUpdated(notification: NSNotification)
+    {
+        print(FBSDKProfile.currentProfile().name)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = FBSDKLoginButton()
@@ -18,6 +22,9 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         self.view.addSubview(loginButton)
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         // Do any additional setup after loading the view, typically from a nib.
+        FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKProfileDidChangeNotification, object: nil)
+
     }
     
     override func didReceiveMemoryWarning() {
