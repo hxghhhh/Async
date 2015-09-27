@@ -10,7 +10,7 @@ import UIKit
 
 class asChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var matchedUsers:[String] = []
+    var matchedUsers = [PFObject]()
 
     @IBOutlet var matchTableView: UITableView!
 
@@ -42,10 +42,11 @@ class asChatViewController: UIViewController, UITableViewDataSource, UITableView
             print(users)
             if users != nil {
                 for user in users! {
-                    let username = user["username"] as? String ?? "Anon"
-                    if(!self.matchedUsers.contains(username)){
-                        self.matchedUsers.append(username)
-                    }
+                    self.matchedUsers.append(user)
+//                    let username = user["username"] as? String ?? "Anon"
+//                    if(!self.matchedUsers.contains(username)){
+//                        self.matchedUsers.append(username)
+//                    }
                    
                 }
                  self.matchTableView.reloadData()
@@ -75,13 +76,22 @@ class asChatViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "matchCell")
         
-        cell.textLabel!.text = matchedUsers[indexPath.row]
+        cell.textLabel!.text = matchedUsers[indexPath.row]["username"] as? String ?? "Anon"
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+//        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("asSettingsViewController") as? asSettingsViewController {
+//            self.presentViewController(vc, animated: true, completion: { () -> Void in
+//                print("good")
+//            })
+//        }
+        let user = matchedUsers[indexPath.row]
+        let id = user["fbID"]
+        let url = NSURL(string: "fb://\(id)")
+        UIApplication.sharedApplication().openURL(url!)
+        print(user)
     }
 
 }

@@ -41,7 +41,6 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
 
         // Do any additional setup after loading the view, typically from a nib.
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
