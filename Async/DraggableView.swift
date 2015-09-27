@@ -29,6 +29,7 @@ class DraggableView: UIView {
     var information: UILabel!
     var xFromCenter: Float!
     var yFromCenter: Float!
+    var user: PFObject!
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

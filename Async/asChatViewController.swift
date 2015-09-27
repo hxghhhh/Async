@@ -33,6 +33,11 @@ class asChatViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationItem.titleView = titleView
         // Do any additional setup after loading the view.
         let query = PFQuery(className: "_User")
+
+
+        let user = PFUser.currentUser()!
+        let tmp = user["fbID"]
+        query.whereKey("fbID", notEqualTo: tmp).whereKey("fbID", containedIn: user["liked"] as! [PFObject]).whereKey("liked", containsAllObjectsInArray: [tmp])
         query.findObjectsInBackgroundWithBlock { (users, error) -> Void in
             print(users)
             if users != nil {

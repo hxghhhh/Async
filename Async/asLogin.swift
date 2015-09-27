@@ -58,6 +58,8 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             FBSDKAccessToken.refreshCurrentAccessToken { (connection, result, error) -> Void in
                 print("Token duration extended")
+                self.parseLogin()
+                self.performSegueWithIdentifier("gotoEventSelection", sender: self)
             }
         }
     }
@@ -112,6 +114,7 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         user.password = "1"
         user["fbID"] = id
         user["visited"] = []
+        user["liked"] = []
         user["name"] = newUserName
         
         user.signUpInBackgroundWithBlock {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class DraggableViewBackground: UIView, DraggableViewDelegate {
-    var exampleCardLabels: [String]!
+    var exampleCardLabels: [PFObject]!
     var allCards: [DraggableView]!
 
     let MAX_BUFFER_SIZE = 2
@@ -41,14 +41,14 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         let user = PFUser.currentUser()!
         let tmp = user["fbID"]
         
-        query.whereKey("fbID", notEqualTo: tmp)// .whereKey("fbID", notContainedIn: user["visited"] as! [AnyObject])
+        query.whereKey("fbID", notEqualTo: tmp).whereKey("fbID", notContainedIn: user["visited"] as! [AnyObject])
         query.findObjectsInBackgroundWithBlock { (users, error) -> Void in
             print(users)
             if users != nil {
                 for user in users! {
                     let username = user["username"] as? String ?? "Anon"
                     print(username)
-                    self.exampleCardLabels.append(username)
+                    self.exampleCardLabels.append(user)
                 }
                 print(self.exampleCardLabels)
                 
@@ -93,7 +93,8 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
 
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
-        draggableView.information.text = exampleCardLabels[index]
+        draggableView.user = exampleCardLabels[index]
+        draggableView.information.text = exampleCardLabels[index]["username"] as! String
         draggableView.delegate = self
         return draggableView
     }
@@ -121,6 +122,10 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
 
     func cardSwipedLeft(card: UIView) -> Void {
+        
+        let user = PFUser.currentUser()!
+        var visited_users = user["visited"] as! [String]
+        visited_users.append(loadedCards[0].user["fbID"] as! String)
         loadedCards.removeAtIndex(0)
 
         if cardsLoadedIndex < allCards.count {
@@ -133,6 +138,12 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func cardSwipedRight(card: UIView) -> Void {
+        let user = PFUser.currentUser()!
+        var visited_users = user["visited"] as! [String]
+        //        var : [PFUSer] visited_users = user["visited"]
+        visited_users.append(loadedCards[0].user["fbID"] as! String)
+        var liked_users = user["liked"] as! [String]
+        liked_users.append(loadedCards[0].user["fbID"] as! String)
         loadedCards.removeAtIndex(0)
         
         if cardsLoadedIndex < allCards.count {
