@@ -7,6 +7,7 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'SLPagingView'
 pod 'Parse'
+pod 'ParseFacebookUtils'
 end
 
 target 'AsyncTests' do

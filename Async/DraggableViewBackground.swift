@@ -30,7 +30,18 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
 
     func queryForUsers() -> Void {
         self.exampleCardLabels = []
-        let query = PFQuery(className: "_User")
+        var query: PFQuery = PFUser.query()!
+
+        do {
+            try PFUser.currentUser()!.fetchIfNeeded()
+
+        } catch _ {
+            print("ohfuck couldn't fetch user fuck fuck fuck")
+        }
+        let user = PFUser.currentUser()!
+        let tmp = user["fbID"]
+        
+        query.whereKey("fbID", notEqualTo: tmp)// .whereKey("fbID", notContainedIn: user["visited"] as! [AnyObject])
         query.findObjectsInBackgroundWithBlock { (users, error) -> Void in
             print(users)
             if users != nil {
@@ -106,16 +117,6 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
                 }
             }
 
-            /*
-            for var i = 0; i < loadedCards.count; i++ {
-                if i > 0 {
-                    self.insertSubview(loadedCards[i], belowSubview: loadedCards[i - 1])
-                } else {
-                        self.addSubview(loadedCards[i])
-                }
-                cardsLoadedIndex = cardsLoadedIndex + 1
-            }
-*/
         }
     }
 

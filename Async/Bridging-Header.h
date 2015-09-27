@@ -14,4 +14,6 @@
 #import <SLPagingView/SLPagingViewController.h>
 #import <Parse/Parse.h>
 
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+
 #endif /* Bridging_Header_h */

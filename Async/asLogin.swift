@@ -14,6 +14,23 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     let loginButton = FBSDKLoginButton()
     var profile = FBSDKProfile.currentProfile()
 
+    func parseLogin() {
+        do {
+            try PFUser.logInWithUsername(FBSDKProfile.currentProfile().name, password: "1")
+        } catch _ {
+            print("fuckshit")
+        }
+        /*
+        PFFacebookUtils.logInWithFacebookId(FBSDKProfile.currentProfile().userID, accessToken: FBSDKAccessToken.currentAccessToken().tokenString, expirationDate: FBSDKAccessToken.currentAccessToken().expirationDate) { (user, error) -> Void in
+            if user != nil {
+            
+            } else {
+
+            
+            }
+        }
+*/
+    }
     func onProfileUpdated(notification: NSNotification)
     {
         // Current profile here
@@ -25,12 +42,12 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         self.view.addSubview(loginButton)
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdate", name: FBSDKProfileDidChangeNotification, object: nil)
 
         // Do any additional setup after loading the view, typically from a nib.
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKProfileDidChangeNotification, object: nil)
         if(FBSDKAccessToken.currentAccessToken() != nil){
+            parseLogin()
             self.performSegueWithIdentifier("gotoEventSelection", sender: self)
         }
     }
@@ -42,12 +59,12 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
             FBSDKAccessToken.refreshCurrentAccessToken { (connection, result, error) -> Void in
                 print("Token duration extended")
             }
-             self.performSegueWithIdentifier("gotoEventSelection", sender: self)
         }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
         if(FBSDKAccessToken.currentAccessToken() != nil){
             self.performSegueWithIdentifier("gotoEventSelection", sender: self)
         }
@@ -63,23 +80,23 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
         print(result)
         // Create request for user's Facebook data
        // let profile = FBSDKProfile.currentProfile()
-        let request = FBSDKGraphRequest(graphPath:"me", parameters:nil)
         
         // Send request to Facebook
-        request.startWithCompletionHandler {
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id,name"])
+            graphRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+                if error != nil {
             
-            (connection, result, error) in
-            
-            if error != nil {
-                // Some error checking here
-                print("error")
-            }
-            else if let userData = result as? [String:AnyObject] {
-                
-                // Access user data
-                let username = userData["name"] as? String
-                let fbID = userData["id"] as? String
-                self.createNewUser(username!, id: fbID!)
+                    // Some error checking here
+                    print("error")
+                }
+                else if let userData = result as? [String:AnyObject] {
+                    
+                    // Access user data
+                    let username = userData["name"] as? String
+                    let fbID = userData["id"] as? String
+                    self.createNewUser(username!, id: fbID!)
+                }
             }
         }
     }
@@ -90,10 +107,12 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     
     
     func createNewUser(newUserName:String, id:String) {
-        let user = PFUser()
+        var user = PFUser()
         user.username = newUserName
         user.password = "1"
         user["fbID"] = id
+        user["visited"] = []
+        user["name"] = newUserName
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
@@ -104,6 +123,8 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
             } else {
                 // Hooray! Let them use the app now.
                 print(newUserName + "Has been saved!!")
+                self.parseLogin()
+                self.performSegueWithIdentifier("gotoEventSelection", sender: self)
             }
         }
     }
