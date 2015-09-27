@@ -32,11 +32,29 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         super.init(frame: frame)
         super.layoutSubviews()
         self.setupView()
-        exampleCardLabels = ["first", "second", "third", "fourth", "last"]
-        allCards = []
-        loadedCards = []
-        cardsLoadedIndex = 0
-        self.loadCards()
+    
+        exampleCardLabels = []
+
+        
+        let query = PFQuery(className: "_User")
+        query.findObjectsInBackgroundWithBlock { (users, error) -> Void in
+            print(users)
+            if users != nil {
+                for user in users! {
+                    let username = user["username"] as? String ?? "Anon"
+                    print(username)
+                    self.exampleCardLabels.append(username)
+                }
+                print(self.exampleCardLabels)
+                self.allCards = []
+                self.loadedCards = []
+                self.cardsLoadedIndex = 0
+                self.loadCards()
+            } else {
+                
+            }
+        }
+        
     }
 
     func setupView() -> Void {

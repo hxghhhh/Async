@@ -27,8 +27,8 @@ class asSwipeViewController: UIViewController {
         titleView = UIImageView(image: logo)
         self.navigationItem.titleView = titleView
         
-//        let draggableBackground: DraggableViewBackground = DraggableViewBackground(frame: self.view.frame)
-//        self.view.addSubview(draggableBackground)
+        let draggableBackground: DraggableViewBackground = DraggableViewBackground(frame: self.view.frame)
+        self.view.addSubview(draggableBackground)
         // Do any additional setup after loading the view.
     }
 
