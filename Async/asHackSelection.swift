@@ -38,6 +38,28 @@ class asEventSelection: UIViewController, UICollectionViewDelegate, UICollection
        
         cell.hackName.text = hacks[indexPath.row]
         cell.hackImage.image = UIImage(named: hacks[indexPath.row])
+
+//        UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:view.bounds];
+//        view.layer.masksToBounds = NO;
+//        view.layer.shadowColor = [UIColor blackColor].CGColor;
+//        view.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
+//        view.layer.shadowOpacity = 0.5f;
+//        view.layer.shadowPath = shadowPath.CGPath;
+        
+        cell.backgroundColor = UIColor.whiteColor()
+        cell.layer.shadowColor = UIColor.grayColor().CGColor
+        cell.layer.shadowPath = UIBezierPath(rect: cell.bounds).CGPath
+        // cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: 20.0).CGPath
+        // cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        // cell.layer.shadowOpacity = 1.0
+        cell.layer.shadowOpacity = 0.7
+        cell.layer.shadowRadius = 10
+        cell.layer.masksToBounds = false
+        //cell.clipsToBounds = false
+        
+//        cell.layer.shadowPath = UIBezierPath.init(roundedRect: cell.bounds, byRoundingCorners:, cornerRadii:cell.contentView.layer.cornerRadius)
+        //cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
         
         return cell
     }
