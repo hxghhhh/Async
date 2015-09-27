@@ -13,10 +13,10 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
     
     let loginButton = FBSDKLoginButton()
     var profile = FBSDKProfile.currentProfile()
-    
+
     func onProfileUpdated(notification: NSNotification)
     {
-        print(FBSDKProfile.currentProfile().name)
+       // print(FBSDKProfile.currentProfile().name)
     }
 
     override func viewDidLoad() {
@@ -126,11 +126,4 @@ class asLogin: UIViewController, FBSDKLoginButtonDelegate{
 //        
         return true
     }
-<<<<<<< HEAD
-        
-=======
-    
-    @IBAction func onClick(sender: AnyObject) {
-    }
->>>>>>> Started working on ui stuff
 }
